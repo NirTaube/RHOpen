@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retail Location revenue Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <style>
+        #map {
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Retail Location Map</h1>
+    <div id="map"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Parse the CSV file using Papa Parse library
+            Papa.parse('sales.csv', {
+                header: true,
+                download: true,
+                complete: function(results) {
+                    var salesData = results.data; // Contains the parsed CSV data
+
+                    // Call a function to create and populate the map with markers
+                    createMap(salesData);
+                }
+            });
+
+            function createMap(salesData) {
+                // Create the map centered on the USA
+                var map = L.map('map').setView([37.8, -96], 4);
+
+                // Add the OpenStreetMap tile layer to the map
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                // Create a marker cluster group
+                var markers = L.markerClusterGroup();
+
+                // Loop through the sales data and add markers to the marker cluster group
+                for (var i = 0; i < salesData.length; i++) {
+                    var location = salesData[i].LOCATION;
+                    var latitude = parseFloat(salesData[i].Latitude.split('°')[0]);
+                    var longitude = parseFloat(salesData[i].Longitude.split('°')[0]);
+                    var netSales = salesData[i].Net_Sales;
+
+                    // Create a marker with a popup for each location
+                    var marker = L.marker([latitude, longitude])
+                        .bindPopup(`<strong>${location}</strong><br>Net Sales: ${netSales}`)
+                        .addTo(markers);
+
+                    // Add the marker to the marker cluster group
+                    markers.addLayer(marker);
+                }
+
+                // Add the marker cluster group to the map
+                map.addLayer(markers);
+            }
+        });
+    </script>
+</body>
+</html>
