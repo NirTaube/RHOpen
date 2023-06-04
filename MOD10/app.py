@@ -17,7 +17,7 @@ Station = Base.classes.station
 # Create Flask app
 app = Flask(__name__)
 
-# Create routes
+
 # Create routes
 @app.route("/")
 def welcome():
