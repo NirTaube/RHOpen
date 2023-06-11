@@ -83,7 +83,7 @@ print(f"There are {len(df2)} rows in this DataFrame.")
 # Display the first 10 rows of the DataFrame
 df2.head(10)
 ```
-Question 3: Top 5 Establishments with a RatingValue of 5
+#### Question 3: Top 5 Establishments with a RatingValue of 5
 To find the top 5 establishments with a RatingValue of 5, sorted by the lowest hygiene score and nearest to our new restaurant "Penang Flavours," we'll follow these steps:
 
 Retrieve the latitude and longitude of "Penang Flavours" using the geocode.latitude and geocode.longitude fields.
