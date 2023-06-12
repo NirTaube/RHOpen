@@ -56,6 +56,8 @@ Copy and paste the code into a Python environment or an IDE.
 Execute the code step by step or all at once.
 The analysis results will be displayed in the console, and the final DataFrame will be saved as a CSV file named mars_weather_data.csv.
 
+>> ## Visualizations
+
 ## Key Findings
 Key Findings:
 
