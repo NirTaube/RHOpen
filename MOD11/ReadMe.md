@@ -60,8 +60,13 @@ The analysis results will be displayed in the console, and the final DataFrame w
 Key Findings:
 
 Number of Months on Mars: The data collected indicates that there are 12 months on Mars. The number of data points varies for each month, with the highest count in the third month and the lowest count in the tenth month.
+
 Martian Days of Data: The scraped dataset contains a total of 1867 Martian days' worth of data. This provides a substantial amount of data for analysis and insights into the Martian climate.
+
 Coldest and Warmest Months on Mars: Based on the average minimum daily temperature, the third month is the coldest on Mars, while the eighth month is the warmest. It's important to note that even the warmest month on Mars is extremely cold by human standards.
+
 Atmospheric Pressure on Mars: The sixth month exhibits the lowest average atmospheric pressure on Mars, while the ninth month has the highest average pressure. These findings shed light on the atmospheric conditions and variations on the planet.
+
 Terrestrial Days in a Martian Year: Analyzing the daily minimum temperature suggests that a Martian year consists of approximately 675 Earth days. This aligns with the well-known fact that a Mars year is equivalent to 687 Earth days.
+
 These findings provide valuable insights into the weather patterns and conditions on Mars. Further analysis and comparison with historical data could uncover additional insights, contributing to a deeper understanding of the Martian climate. Please note that these conclusions are based on the provided code and its assumptions. Actual weather conditions and patterns on Mars may vary and should be studied using more extensive and diverse datasets.
