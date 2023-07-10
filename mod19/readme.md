@@ -4,12 +4,12 @@
 
 ## Librarys
 
-import pandas as pd
-import hvplot.pandas
-from sklearn.cluster import KMeans
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler
-import bokeh
+- import pandas as pd
+- import hvplot.pandas
+- from sklearn.cluster import KMeans
+- from sklearn.decomposition import PCA
+- from sklearn.preprocessing import StandardScaler
+- import bokeh
 ---
 
 - ***Optimal Number of Clusters:*** The optimal number of clusters (k) determined using the Elbow curve method was found to be 4. This value indicates that the data can be best clustered into four distinct groups.
